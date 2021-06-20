@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: darkweb-healthcheck-deployment
+  labels:
+    app: darkweb-healthcheck
+    tier: healthcheck
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: darkweb-healthcheck
+      tier: healthcheck
+  template:
+    metadata:
+      labels:
+        app: darkweb-healthcheck
+        tier: healthcheck
+    spec:
+      containers:
+        - name: darkweb-healthcheck
+          image: "{{ .Values.darkweb.image.name }}:{{ .Values.darkweb.image.tag }}"
+          imagePullPolicy: Always
+          {{- if .Values.elasticsearch_ip }}
+          env:
+            - name: elasticsearchIP
+              value: {{ .Values.elasticsearch_ip }}
+          {{- end }}

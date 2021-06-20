@@ -1,0 +1,22 @@
+{
+  "mappings": {
+    "properties": {
+      "source": {
+        "type": "keyword"
+      },
+      "timestamp": {
+        "type": "date",
+        "format": "epoch_millis"
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "domain": {
+        "type": "keyword"
+      },
+      "url": {
+        "type": "keyword"
+      }
+    }
+  }
+}
