@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for darkweb-recrawler project
+# Scrapy settings for darkweb-healthcheck project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -74,13 +74,13 @@ ROBOTSTXT_OBEY = False
 DOWNLOAD_DELAY = 2
 RANDOMIZE_DOWNLOAD_DELAY = True
 
-BOT_NAME = 'darkweb-recrawler'
+BOT_NAME = 'darkweb-healthcheck'
 
-SPIDER_MODULES = ['darkweb-recrawler.spiders']
-NEWSPIDER_MODULE = 'darkweb-recrawler.spiders'
+SPIDER_MODULES = ['darkweb-healthcheck.spiders']
+NEWSPIDER_MODULE = 'darkweb-healthcheck.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'darkweb-recrawler (+http://www.yourdomain.com)'
+# USER_AGENT = 'darkweb-healthcheck (+http://www.yourdomain.com)'
 # USER_AGENT = "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0"
 
 # Obey robots.txt rules
@@ -112,13 +112,13 @@ NEWSPIDER_MODULE = 'darkweb-recrawler.spiders'
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'darkweb-recrawler.middlewares.TorspiderSpiderMiddleware': 543,
+#    'darkweb-healthcheck.middlewares.TorspiderSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-    'darkweb-recrawler.middlewares.TorspiderDownloaderMiddleware': 543,
+    'darkweb-healthcheck.middlewares.TorspiderDownloaderMiddleware': 543,
 }
 
 # Enable or disable extensions
@@ -130,11 +130,11 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'darkweb-recrawler.pipelines.TorspiderPipeline': 300
+    'darkweb-healthcheck.pipelines.TorspiderPipeline': 300
 }
 
 # ITEM_PIPELINES = {
-# 'darkweb-recrawler.pipelines.TorspiderPipeline': 300,
+# 'darkweb-healthcheck.pipelines.TorspiderPipeline': 300,
 # }
 
 # REDIS_URL = "redis://"
@@ -164,7 +164,7 @@ ITEM_PIPELINES = {
 # REDIS_HOST = "47.88.60.163"
 # REDIS_PORT = 6379
 # REDIS_PARAMS = {
-# 'password' : 'darkweb-recrawler'
+# 'password' : 'darkweb-healthcheck'
 # }
 
 # Sub Crawler
