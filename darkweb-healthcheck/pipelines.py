@@ -23,8 +23,9 @@ class TorspiderPipeline(RedisPipeline):
         domain = item['domain']
 
         timestamp = datetime.now().timestamp() * 1000
+        es_id = domain + str(timestamp)
 
-        es_id = sha256(str(timestamp).encode("utf-8")).hexdigest()
+        es_id = sha256(es_id.encode("utf-8")).hexdigest()
 
         tag = {
             "timestamp": timestamp,
