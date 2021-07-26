@@ -29,6 +29,7 @@ class TorspiderPipeline(RedisPipeline):
         tag = {
             "timestamp": timestamp,
             "type": "darkweb-healthcheck",
+            "version": item["version"],
             "domain": domain,
             "url": url
         }

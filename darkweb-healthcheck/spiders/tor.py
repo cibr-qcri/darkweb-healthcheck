@@ -28,5 +28,6 @@ class TorSpider(RedisSpider):
             item = TorspiderItem()
             item['url'] = url
             item['domain'] = domain
+            item['version'] = "v3" if len(domain.replace(".onion", "")) > 16 else "v2",
 
             yield item
