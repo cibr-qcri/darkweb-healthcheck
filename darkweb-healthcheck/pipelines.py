@@ -1,5 +1,4 @@
 import os
-import re
 from datetime import datetime
 from hashlib import sha256
 
@@ -22,7 +21,7 @@ class TorspiderPipeline(RedisPipeline):
         url = item["url"]
         domain = item['domain']
 
-        timestamp = datetime.now().timestamp() * 1000
+        timestamp = int(datetime.now().timestamp() * 1000)
         es_id = domain + str(timestamp)
 
         es_id = sha256(es_id.encode("utf-8")).hexdigest()
@@ -30,7 +29,6 @@ class TorspiderPipeline(RedisPipeline):
         tag = {
             "timestamp": timestamp,
             "type": "darkweb-healthcheck",
-            "source": "tor",
             "domain": domain,
             "url": url
         }
