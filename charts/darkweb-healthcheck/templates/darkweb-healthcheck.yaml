@@ -7,7 +7,7 @@ metadata:
     app: darkweb-healthcheck
     tier: healthcheck
 spec:
-  replicas: 15
+  replicas: 10
   selector:
     matchLabels:
       app: darkweb-healthcheck
