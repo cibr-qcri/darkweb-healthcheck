@@ -13,6 +13,8 @@ import os
 
 DIRNAME = os.path.dirname(os.path.abspath(__file__))
 
+HTTPERROR_ALLOWED_CODES = [503]
+
 # Whether to enable logging.
 LOG_ENABLED = True
 # Minimum level to log. Available levels are: CRITICAL, ERROR, WARNING, INFO, DEBUG. For more info see Logging.
@@ -215,4 +217,4 @@ ELASTICSEARCH_CLIENT_SERVICE_HOST = os.getenv('ELASTICSEARCH7_MASTER_SERVICE_HOS
 ELASTICSEARCH_CLIENT_SERVICE_PORT = os.getenv('ELASTICSEARCH7_MASTER_SERVICE_PORT')
 ELASTICSEARCH_USERNAME = 'elastic'
 ELASTICSEARCH_PASSWORD = 'changeme'
-ELASTICSEARCH_INDEX = 'darkweb-healthcheck'
+ELASTICSEARCH_INDEX = 'darkweb-healthcheck-index'

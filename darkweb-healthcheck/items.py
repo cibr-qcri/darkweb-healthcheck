@@ -12,3 +12,4 @@ class TorspiderItem(scrapy.Item):
     url = scrapy.Field()
     domain = scrapy.Field()
     version = scrapy.Field()
+    is_online = scrapy.Field()

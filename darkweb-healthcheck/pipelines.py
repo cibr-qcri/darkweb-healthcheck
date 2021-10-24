@@ -29,9 +29,9 @@ class TorspiderPipeline(RedisPipeline):
         tag = {
             "timestamp": timestamp,
             "type": "darkweb-healthcheck",
+            "is_online": item["is_online"],
             "version": item["version"],
             "domain": domain,
             "url": url
         }
-
         self.es.persist_report(tag, es_id)

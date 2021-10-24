@@ -24,10 +24,12 @@ class TorSpider(RedisSpider):
 
         if ONION_PAT.match(response.url):
             domain = self.helper.get_domain(url)
-
             item = TorspiderItem()
             item['url'] = url
+            item['is_online'] = True
             item['domain'] = domain
-            item['version'] = "v3" if len(domain.replace(".onion", "")) > 16 else "v2",
+            item['version'] = 'v3' if len(domain.replace('.onion', '')) > 16 else 'v2',
+            if response.status == 503:
+                item['is_online'] = False
 
             yield item
