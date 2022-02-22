@@ -213,8 +213,5 @@ USER_AGENT = [
     "Mozilla/5.0 (X11; U; Linux x86_64; zh-CN; rv:1.9.2.10) Gecko/20100922 Ubuntu/10.10 (maverick) Firefox/3.6.10",
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
 ]
-ELASTICSEARCH_CLIENT_SERVICE_HOST = os.getenv('ELASTICSEARCH_MASTER_SERVICE_HOST')
-ELASTICSEARCH_CLIENT_SERVICE_PORT = os.getenv('ELASTICSEARCH_MASTER_SERVICE_PORT')
-ELASTICSEARCH_USERNAME = 'elastic'
-ELASTICSEARCH_PASSWORD = 'changeme'
+ELASTICSEARCH_HOST = "es.cibr.qcri.org"
 ELASTICSEARCH_INDEX = 'darkweb-healthcheck-index'
