@@ -10,8 +10,7 @@ class ES7(metaclass=Singleton):
         self.settings = get_project_settings()
         self.host = self.settings['ELASTICSEARCH_HOST']
         self.index = self.settings['ELASTICSEARCH_INDEX']
-        self.es = Elasticsearch([self.host], scheme="http", port=80, timeout=50, max_retries=10,
-                                retry_on_timeout=True)
+        self.es = Elasticsearch([self.host], timeout=50, max_retries=10, retry_on_timeout=True, sniff_on_start=True)
 
     @staticmethod
     def unify(url):
