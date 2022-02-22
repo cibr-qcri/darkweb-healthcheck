@@ -13,7 +13,8 @@ import os
 
 DIRNAME = os.path.dirname(os.path.abspath(__file__))
 
-HTTPERROR_ALLOWED_CODES = [503]
+# HTTPERROR_ALLOWED_CODES = [503]
+HTTPERROR_ALLOW_ALL = True
 
 # Whether to enable logging.
 LOG_ENABLED = True
