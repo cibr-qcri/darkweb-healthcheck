@@ -29,7 +29,7 @@ class TorSpider(RedisSpider):
             item['is_online'] = True
             item['domain'] = domain
             item['version'] = 'v3' if len(domain.replace('.onion', '')) > 16 else 'v2',
-            if not response.staus or response.status > 210:
+            if response.status > 210:
                 item['is_online'] = False
 
             yield item
