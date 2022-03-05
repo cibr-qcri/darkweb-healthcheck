@@ -1,5 +1,5 @@
 import re
-
+import scrapy
 from scrapy_redis.spiders import RedisSpider
 
 from ..items import TorspiderItem
@@ -18,6 +18,10 @@ class TorSpider(RedisSpider):
     def __init__(self):
         RedisSpider.__init__(self)
         self.helper = TorHelper()
+
+    def make_requests_from_url(self, url):
+        self.logger.info(f'start request url:{url}')
+        return scrapy.Request(url, dont_filter=True, callback=self.parse)
 
     def parse(self, response):
         url = self.helper.unify(response.url)

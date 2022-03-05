@@ -1,6 +1,6 @@
 darkweb:
   image:
-    name: "toshiqcri/darkweb-healthcheckv1"
+    name: "toshiqcri/darkweb-healthcheckv4"
     tag: "0.0.0"
     pullPolicy: IfNotPresent
   elasticsearch:
